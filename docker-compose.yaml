@@ -1,0 +1,9 @@
+  mysql:
+    image: percona:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwerty
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "127.0.0.1:3306:3306"
